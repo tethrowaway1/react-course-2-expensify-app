@@ -11,7 +11,7 @@ const ExpenseListItem = ({ dispatch, id, description, amount, createdAt }) => (
             <h3>{description}</h3>
         </Link>
         <h3>{description}</h3>
-        <p>{numeral(amount / 100).format('$0,0.00')} - {createdAt}</p>
+        <p>{numeral(amount / 100).format('$0,0.00')} - {moment(createdAt).format('MMMM Do, YYYY')}</p>
         <button onClick={() => {
             dispatch(removeExpense({id}));
         }}>Remove</button>
